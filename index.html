@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliav Brooks-Rubin | Portfolio</title>
+    <style>
+        /* General Styles & Dark Mode */
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: #4da8da;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #87c5e5;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1e1e1e;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2a2a2a;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #3a3a3a;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Social Icons */
+        .social-icons a {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section - Cinematic Centerpiece */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 80vh; /* Dynamic height based on viewport */
+            background: linear-gradient(rgba(18, 18, 18, 0.3), rgba(18, 18, 18, 0.9)), url('YOUR_LARGE_BANNER_IMAGE.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #cccccc;
+            margin-top: 10px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+        }
+
+        /* Section Layout */
+        section {
+            padding: 5rem 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Grid for Work */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards for Content */
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: auto; 
+            min-height: 350px; 
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-preview, .twitter-embed-container, .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #000;
+        }
+
+        .twitter-embed-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content p {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            text-align: center;
+            padding: 3rem 10%;
+            border-top: 1px solid #333;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4da8da;
+            color: #121212;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #87c5e5;
+            color: #121212;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="nav-brand">EB-R</a>
+        <div class="nav-links">
+            <a href="#about">About Me</a>
+            <div class="dropdown">
+                <a href="#work">My Work ▼</a>
+                <div class="dropdown-content">
+                    <a href="#reels">Play-by-Play Reels</a>
+                    <a href="#writing">Writing</a>
+                    <a href="#on-camera">On Camera</a>
+                </div>
+            </div>
+            <a href="#resume">Resume</a>
+            <div class="social-icons">
+                <a href="YOUR_TWITTER_LINK" target="_blank">𝕏</a>
+                <a href="YOUR_LINKEDIN_LINK" target="_blank">in</a>
+                <a href="mailto:YOUR_EMAIL@example.com">✉</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Eliav Brooks-Rubin</h1>
+        <p>Live Broadcasting & Sports Storytelling</p>
+    </header>
+
+    <!-- About Me -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>This is where you can add your professional bio. Talk about your experience, where you are currently studying or working, your passion for sports broadcasting, and what drives your storytelling. (Replace this placeholder text with your actual bio).</p>
+    </section>
+
+    <!-- My Work -->
+    <section id="work">
+        <h2 class="section-title">My Work</h2>
+
+        <!-- Reels -->
+        <h3 id="reels" class="section-title" style="font-size: 1.8rem; border: none;">Play-by-Play Reels</h3>
+        <div class="grid">
+            <div class="card">
+                <iframe class="video-preview" src="https://www.youtube.com/embed/NIrvOgpVR98" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Play-by-Play Reel 1</h3>
+                </div>
+            </div>
+            <div class="card">
+                <iframe class="video-preview" src="https://www.youtube.com/embed/Y51ZSCQW8fc" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Play-by-Play Reel 2</h3>
+                </div>
+            </div>
+            <div class="card">
+                <iframe class="video-preview" src="https://www.youtube.com/embed/zeJJXfpP_W4" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Play-by-Play Reel 3</h3>
+                </div>
+            </div>
+            <div class="card">
+                <iframe class="video-preview" src="https://www.youtube.com/embed/bDeZ3mhp57A" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Play-by-Play Reel 4</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Writing -->
+        <h3 id="writing" class="section-title" style="font-size: 1.8rem; border: none; margin-top: 3rem;">Writing</h3>
+        <div class="grid">
+            <div class="card">
+                <a href="https://www.insidenu.com/2025/3/14/24385254/how-a-difficult-season-revealed-the-grittiness-of-northwesterns-program" target="_blank">
+                    <img src="https://placehold.co/600x400/333333/ffffff?text=Season+Wrap+Story" alt="Season Wrap Story">
+                </a>
+                <div class="card-content">
+                    <a href="https://www.insidenu.com/2025/3/14/24385254/how-a-difficult-season-revealed-the-grittiness-of-northwesterns-program" target="_blank">
+                        <h3>Northwestern 2025 Season Wrap</h3>
+                    </a>
+                    <p>How a difficult season revealed the grittiness of Northwestern's program following the Big Ten Tournament loss.</p>
+                </div>
+            </div>
+            <div class="card">
+                <a href="https://www.insidenu.com/northwestern-mens-basketball/54623/collins-classroom-all-the-small-things" target="_blank">
+                    <img src="image_e12fa3.jpg" alt="Collins Classroom">
+                </a>
+                <div class="card-content">
+                    <a href="https://www.insidenu.com/northwestern-mens-basketball/54623/collins-classroom-all-the-small-things" target="_blank">
+                        <h3>Collins Classroom</h3>
+                    </a>
+                    <p>Weekly film review column focusing on Northwestern basketball and all the small things that impact the game.</p>
+                </div>
+            </div>
+            <div class="card">
+                <a href="https://docs.google.com/document/d/1sJvz26IyE75Z3mD5kbfX10s040J8_VTNpc2ZtHcQ9Ac/edit?tab=t.0" target="_blank">
+                    <img src="https://placehold.co/600x400/333333/ffffff?text=Academy+Feature" alt="Academy Feature">
+                </a>
+                <div class="card-content">
+                    <a href="https://docs.google.com/document/d/1sJvz26IyE75Z3mD5kbfX10s040J8_VTNpc2ZtHcQ9Ac/edit?tab=t.0" target="_blank">
+                        <h3>Jason Heyward Baseball Academy</h3>
+                    </a>
+                    <p>A written feature on the Jason Heyward Baseball Academy.</p>
+                </div>
+            </div>
+            <div class="card">
+                <a href="https://www.insidenu.com/northwestern-mens-basketball/52727/big-ten-basketball-preview-from-natty-aspirations-to-hoping-for-500" target="_blank">
+                    <img src="image_e127e1.jpg" alt="Big Ten Preview">
+                </a>
+                <div class="card-content">
+                    <a href="https://www.insidenu.com/northwestern-mens-basketball/52727/big-ten-basketball-preview-from-natty-aspirations-to-hoping-for-500" target="_blank">
+                        <h3>2025-26 Big Ten Predictions</h3>
+                    </a>
+                    <p>Big Ten basketball preview: From national championship aspirations to hoping for .500.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- On Camera -->
+        <h3 id="on-camera" class="section-title" style="font-size: 1.8rem; border: none; margin-top: 3rem;">On Camera</h3>
+        <div class="grid">
+            <div class="card">
+                <video class="video-preview" controls>
+                    <source src="https://www.dropbox.com/scl/fi/a51a7fo294okfmklai1xx/MVI_0463.MP4?rlkey=xkmml00x7a2nodnvkho3o1dhb&st=sno4adrv&raw=1" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-content">
+                    <h3>Duluth Huskies Postgame Player Interview with Ben Llewellyn</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <video class="video-preview" controls>
+                    <source src="https://www.dropbox.com/scl/fi/97nuno1o5u5189qph0q1e/7-4-lead-in.mp4?rlkey=iq4kmqtywysqriva0b0vf3nhp&st=0b40h93b&raw=1" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-content">
+                    <h3>Pregame Lead-in Show</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <video class="video-preview" controls>
+                    <source src="https://www.dropbox.com/scl/fi/pdrazki4j18aex93ye269/MVI_0426.MP4?rlkey=logndxpqd9efokc5s3q6k49mc&st=3qqbtq16&raw=1" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-content">
+                    <h3>La Crosse Loggers Postgame Player Interview with Mana Lau Kong</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="twitter-embed-container">
+                    <blockquote class="twitter-tweet" data-theme="dark">
+                        <a href="https://x.com/NNNSports/status/1755431900125319408?s=20"></a>
+                    </blockquote>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div class="card-content">
+                    <a href="https://x.com/NNNSports/status/1755431900125319408?s=20" target="_blank" style="text-decoration: none; color: inherit;">
+                        <h3>Northwestern vs. Nebraska MBB Halftime Standup</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume">
+        <h2 class="section-title">Resume</h2>
+        <p>View or download my full resume below to see a complete history of my broadcasting and journalism experience.</p>
+        <a href="YOUR_RESUME_PDF_LINK.pdf" class="btn" target="_blank">View Resume (PDF)</a>
+    </section>
+
+    <!-- Contact/Footer -->
+    <footer id="contact">
+        <h2>Let's Connect</h2>
+        <p>Interested in working together? Reach out via email or connect with me on social media.</p>
+        <div class="social-icons" style="margin-top: 1rem;">
+            <a href="YOUR_TWITTER_LINK" target="_blank" style="font-size: 2rem; margin: 0 10px;">𝕏</a>
+            <a href="YOUR_LINKEDIN_LINK" target="_blank" style="font-size: 2rem; margin: 0 10px;">in</a>
+            <a href="mailto:YOUR_EMAIL@example.com" style="font-size: 2rem; margin: 0 10px;">✉</a>
+        </div>
+        <p style="margin-top: 3rem; font-size: 0.8rem; color: #555;">&copy; 2024 Eliav Brooks-Rubin. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

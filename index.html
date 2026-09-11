@@ -101,13 +101,15 @@
             position: relative;
             width: 100%;
             height: 80vh; /* Dynamic height based on viewport */
-            background: linear-gradient(rgba(18, 18, 18, 0.3), rgba(18, 18, 18, 0.9)), url('headerpic.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.8)), url('headerpic.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Anchors the text to the top */
+            padding-top: 12vh; /* Pushes the text down slightly so it sits nicely above your head */
             align-items: center;
             text-align: center;
-            padding: 0 20px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         .hero h1 {
@@ -241,7 +243,7 @@
     <!-- Hero Section -->
     <header class="hero">
         <h1>Eliav Brooks-Rubin</h1>
-        <p>Live Broadcasting & Sports Storytelling</p>
+        <p>Play-by-play broadcaster and sports journalist</p>
     </header>
 
     <!-- About Me -->
@@ -342,10 +344,7 @@
         <h3 id="on-camera" class="section-title" style="font-size: 1.8rem; border: none; margin-top: 3rem;">On Camera</h3>
         <div class="grid">
             <div class="card">
-                <video class="video-preview" controls poster="IMG_8687.jpg">
-                    <source src="ScreenRecording_09-10-2026 11-47-24_1_2.mov" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <iframe class="video-preview" src="https://www.youtube.com/embed/qSJ_zqzlmmY" frameborder="0" allowfullscreen></iframe>
                 <div class="card-content">
                     <h3>Northwestern vs. Penn State Pregame Show</h3>
                 </div>

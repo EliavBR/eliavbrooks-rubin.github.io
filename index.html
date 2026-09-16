@@ -1,23 +1,460 @@
-<div class="card">
-                <a href="https://www.insidenu.com/northwestern-mens-basketball/61587/collins-classroom-michael-jordan-clayton" target="_blank">
-                    <img src="https://cdn.vox-cdn.com/thumbor/4T2B0ZJg-QfT7s6S5v6Wn2s6j0I=/0x0:3000x2000/1200x800/filters:focal(1260x760:1740x1240)/cdn.vox-cdn.com/uploads/chorus_image/image/73289012/usa_today_21876543.0.jpg" alt="Collins' Classroom: (Michael) Jordan Clayton">
-                </a>
-                <div class="card-content">
-                    <a href="https://www.insidenu.com/northwestern-mens-basketball/61587/collins-classroom-michael-jordan-clayton" target="_blank">
-                        <h3>Collins' Classroom: (Michael) Jordan Clayton</h3>
-                    </a>
-                    <p>Film breakdown analyzing key strategic adjustments and player execution in conference play.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliav Brooks-Rubin | Portfolio</title>
+    <style>
+        /* General Styles & Dark Mode */
+        body {
+            margin: 0;
+            font-family: 'Georgia Pro', Georgia, serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: #4da8da;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #87c5e5;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1e1e1e;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2a2a2a;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #3a3a3a;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Social Icons */
+        .social-icons a {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section - Cinematic Centerpiece */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 80vh; /* Dynamic height based on viewport */
+            background: linear-gradient(rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.8)), url('headerpic.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Anchors the text to the top */
+            padding-top: 12vh; /* Pushes the text down slightly so it sits nicely above your head */
+            align-items: center;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-top: 10px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+        }
+
+        /* Section Layout */
+        section {
+            padding: 1.5rem 10%; /* Adjusted to ensure standard 3-rem gap between sections */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Grid for Work */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards for Content */
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: auto; 
+            min-height: 350px; 
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-preview, .twitter-embed-container, .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #000;
+        }
+
+        .twitter-embed-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content p {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            text-align: center;
+            padding: 3rem 10%;
+            border-top: 1px solid #333;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4da8da;
+            color: #121212;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #87c5e5;
+            color: #121212;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="nav-brand">Eliav Brooks-Rubin</a>
+        <div class="nav-links">
+            <a href="#about">About Me</a>
+            <div class="dropdown">
+                <a href="#work">My Work ▼</a>
+                <div class="dropdown-content">
+                    <a href="#reels">Play-by-Play Reels</a>
+                    <a href="#writing">Writing</a>
+                    <a href="#on-camera">On Camera</a>
                 </div>
             </div>
+            <a href="#resume">Resume</a>
+            <div class="social-icons">
+                <a href="https://x.com/eliavbr5" target="_blank">𝕏</a>
+                <a href="https://www.linkedin.com/in/eliav-brooks-rubin-8bab38326/" target="_blank">in</a>
+                <a href="mailto:eliavdaniel5@gmail.com">✉</a>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Eliav Brooks-Rubin</h1>
+        <p>Play-by-play broadcaster and sports journalist</p>
+    </header>
+
+    <!-- About Me -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>I am currently a senior in the Class of 2027 in the Medill School of Journalism at Northwestern University. Since I was 15, my dream has been to be a play-by-play announcer and I have been pursuing a career in the sports world for as long as I can remember.</p>
+        <p>My passion for sports broadcasting and storytelling comes from an innate desire to be able to sit down and have a fulfilling conversation about sports with anyone and everyone. In my work, I aim to do just that – make sports, with all its complexities and intricacies, into something accessible and enjoyable for all. That characteristic shows in my broadcasting, where I focus on bringing to life the numbers around the game while contextualizing them with the action happening on screen. I frequently tackle complex statistics and coaching concepts in my writing, but ensure that my stories and analysis can be consumed by everyone.</p>
+        <p>I have been calling games now for over three years, logging hundreds of broadcasts and thousands of hours of preparation since starting college. At Northwestern, I broadcast for WNUR Sports on the radio and Big Ten Plus for telecasts. I have called dozens of games across eight sports for WNUR, with a few major highlights that include calling Northwestern MBB's 2026 Big Ten Tournament run, road trips to Michigan, Minnesota and Penn State for MBB, baseball and WBB, and calling a Northwestern field hockey national championship victory.</p>
+        <p>At Big Ten Plus, I have been a relied upon voice since my freshman year. I was the only member of my freshman class to broadcast a game for the network and I have continued to be relied upon as part of the main rotation of commentators, especially for baseball and basketball. In both my sophomore and junior years, I called more Northwestern baseball games than any other broadcaster at Northwestern, whether student or freelancer. In addition to my broadcasting work, I am a valuable member of the team in the control room, where I have served in nearly every role. I primarily operate replay or graphics but I have produced, run the scorebug and manned cameras for Big Ten Plus streams.</p>
+        <p>I have furthered my broadcasting career in both summers by working in summer league collegiate baseball. Most recently, I called 40 games for the Duluth Huskies of the Northwoods League between May 25th and August 8th as part of the largest summer league in the country. You can find my reel from this summer on this website. In 2025, I spent the summer closer to home, calling 25 games for the Bethesda Big Train of the Cal Ripken Sr. Collegiate Baseball League. With the Big Train, our broadcast team set viewership records and were commended by league officials as "the best broadcast in league history" en route to calling a Big Train league championship.</p>
+        <p>In the writing section of my page, you will primarily find articles written on Inside NU, Northwestern's official sports blog site. For Inside, I have mostly written analytical basketball content, establishing a weekly film review column titled Collins' Classroom, where I broke down the best, worst and funniest from every week of Northwestern hoops. I also have written many pieces for Medill as a journalism student, and some of my best sports-related work is accessible as well.</p>
+        <p>I am very excited to share my work with you. Please explore the site and feel free to reach out using my contact information in the top right corner!</p>
+    </section>
+
+    <!-- My Work -->
+    <section id="work">
+        <h2 class="section-title">My Work</h2>
+
+        <!-- Reels -->
+        <h3 id="reels" class="section-title" style="font-size: 1.8rem; border: none;">Play-by-Play Reels</h3>
+        <div class="grid">
+            <div class="card">
+                <iframe class="video-preview" src="https://www.youtube.com/embed/NIrvOgpVR98" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Baseball TV Play-by-Play Reel -- Duluth Huskies Summer 2026</h3>
+                    <p>(August 2026)</p>
+                </div>
+            </div>
+            <div class="card">
+                <iframe class="video-preview" src="https://www.youtube.com/embed/Y51ZSCQW8fc" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Baseball Radio Play-by-Play Reel</h3>
+                    <p>(August 2026)</p>
+                </div>
+            </div>
+            <div class="card">
+                <iframe class="video-preview" src="https://www.youtube.com/embed/zeJJXfpP_W4" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Basketball Radio Play-by-Play Reel</h3>
+                    <p>(August 2026)</p>
+                </div>
+            </div>
+            <div class="card">
+                <iframe class="video-preview" src="https://www.youtube.com/embed/bDeZ3mhp57A" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>2026 Jim Nantz Award Submission</h3>
+                    <p>(May 2026)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Writing -->
+        <h3 id="writing" class="section-title" style="font-size: 1.8rem; border: none; margin-top: 3rem;">Writing</h3>
+        <div class="grid">
+            <div class="card">
+                <a href="https://www.insidenu.com/2025/3/14/24385254/how-a-difficult-season-revealed-the-grittiness-of-northwesterns-program" target="_blank">
+                    <img src="ty_berry.jpg" alt="Season Wrap Story">
+                </a>
+                <div class="card-content">
+                    <a href="https://www.insidenu.com/2025/3/14/24385254/how-a-difficult-season-revealed-the-grittiness-of-northwesterns-program" target="_blank">
+                        <h3>Northwestern 2025 Season Wrap</h3>
+                    </a>
+                    <p>How a difficult season revealed the grittiness of Northwestern's program following the Big Ten Tournament loss. (March 2025)</p>
+                </div>
+            </div>
             <div class="card">
                 <a href="https://www.insidenu.com/northwestern-mens-basketball/54623/collins-classroom-all-the-small-things" target="_blank">
-                    <img src="image_e12fa3.jpg" alt="Collins' Classroom: All the Small Things">
+                    <img src="image_e12fa3.jpg" alt="Collins Classroom">
                 </a>
                 <div class="card-content">
                     <a href="https://www.insidenu.com/northwestern-mens-basketball/54623/collins-classroom-all-the-small-things" target="_blank">
-                        <h3>Collins' Classroom: All the Small Things</h3>
+                        <h3>Collins Classroom</h3>
                     </a>
                     <p>Weekly film review column focusing on Northwestern basketball and all the small things that impact the game. (November 2025)</p>
                 </div>
             </div>
+            <div class="card">
+                <a href="https://docs.google.com/document/d/1sJvz26IyE75Z3mD5kbfX10s040J8_VTNpc2ZtHcQ9Ac/edit?tab=t.0" target="_blank">
+                    <img src="heyward_academy.jpg" alt="Academy Feature">
+                </a>
+                <div class="card-content">
+                    <a href="https://docs.google.com/document/d/1sJvz26IyE75Z3mD5kbfX10s040J8_VTNpc2ZtHcQ9Ac/edit?tab=t.0" target="_blank">
+                        <h3>Jason Heyward Baseball Academy</h3>
+                    </a>
+                    <p>A written feature on the Jason Heyward Baseball Academy. (June 2025)</p>
+                </div>
+            </div>
+            <div class="card">
+                <a href="https://www.insidenu.com/northwestern-mens-basketball/52727/big-ten-basketball-preview-from-natty-aspirations-to-hoping-for-500" target="_blank">
+                    <img src="image_e127e1.jpg" alt="Big Ten Preview">
+                </a>
+                <div class="card-content">
+                    <a href="https://www.insidenu.com/northwestern-mens-basketball/52727/big-ten-basketball-preview-from-natty-aspirations-to-hoping-for-500" target="_blank">
+                        <h3>2025-26 Big Ten Predictions</h3>
+                    </a>
+                    <p>Big Ten basketball preview: From national championship aspirations to hoping for .500. (October 2025)</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="https://docs.google.com/document/d/1js-gnkBtnitAnRt6QyJ1oxbJHA-D5GqQONEMEGD-vL8/edit?tab=t.0" target="_blank">
+                    <img src="isu_tenn_sweet16.jpg" alt="Iowa State vs. Tennessee Sweet 16 Game Story">
+                </a>
+                <div class="card-content">
+                    <a href="https://docs.google.com/document/d/1js-gnkBtnitAnRt6QyJ1oxbJHA-D5GqQONEMEGD-vL8/edit?tab=t.0" target="_blank">
+                        <h3>Iowa State vs. Tennessee Sweet 16 Game Story</h3>
+                    </a>
+                    <p>Coverage of the Sweet 16 matchup between Iowa State and Tennessee. (March 2026)</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="https://docs.google.com/document/d/11Zi9hGTe5ul7CvXEYKEW1_Rtg6n6ZzFe5bEaynQOAn0/edit?tab=t.0" target="_blank">
+                    <img src="isu_presser.jpg" alt="Iowa State Sweet 16 Press Conference Story">
+                </a>
+                <div class="card-content">
+                    <a href="https://docs.google.com/document/d/11Zi9hGTe5ul7CvXEYKEW1_Rtg6n6ZzFe5bEaynQOAn0/edit?tab=t.0" target="_blank">
+                        <h3>Iowa State Sweet 16 Press Conference Story</h3>
+                    </a>
+                    <p>Press conference story covering Iowa State during the Sweet 16. (March 2026)</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="https://docs.google.com/document/d/1JkHhfy5-sxBc0k1inRF6ZD4_-v3oX_jn5XCZXRWtkds/edit?tab=t.0" target="_blank">
+                    <img src="iowa_maryland_b1g.jpg" alt="Iowa vs. Maryland Big Ten Tournament Game Story">
+                </a>
+                <div class="card-content">
+                    <a href="https://docs.google.com/document/d/1JkHhfy5-sxBc0k1inRF6ZD4_-v3oX_jn5XCZXRWtkds/edit?tab=t.0" target="_blank">
+                        <h3>Iowa vs. Maryland Big Ten Tournament Game Story</h3>
+                    </a>
+                    <p>Game story for the Big Ten Tournament matchup between Iowa and Maryland. (March 2026)</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <a href="https://docs.google.com/document/d/1jauqHA03elJMiBCzRmi2MoU4NmNLqZI2CDdyTF4wL-A/edit?tab=t.0" target="_blank">
+                    <img src="ifalck_profile.jpg" alt="Ian Falck Ultimate Frisbee profile">
+                </a>
+                <div class="card-content">
+                    <a href="https://docs.google.com/document/d/1jauqHA03elJMiBCzRmi2MoU4NmNLqZI2CDdyTF4wL-A/edit?tab=t.0" target="_blank">
+                        <h3>Ian Falck Ultimate Frisbee profile</h3>
+                    </a>
+                    <p>A profile piece on Ian Falck and Ultimate Frisbee. (May 2024)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- On Camera -->
+        <h3 id="on-camera" class="section-title" style="font-size: 1.8rem; border: none; margin-top: 3rem;">On Camera</h3>
+        <div class="grid">
+            <div class="card">
+                <iframe class="video-preview" src="https://www.youtube.com/embed/qSJ_zqzlmmY" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Northwestern vs. Penn State Pregame Show</h3>
+                    <p>(February 2026)</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <video class="video-preview" controls poster="llewellyn_thumb.jpg">
+                    <source src="https://www.dropbox.com/scl/fi/a51a7fo294okfmklai1xx/MVI_0463.MP4?rlkey=xkmml00x7a2nodnvkho3o1dhb&st=sno4adrv&raw=1" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-content">
+                    <h3>Duluth Huskies Postgame Player Interview with Ben Llewellyn</h3>
+                    <p>(July 2026)</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <video class="video-preview" controls poster="leadin_thumb.jpg">
+                    <source src="https://www.dropbox.com/scl/fi/97nuno1o5u5189qph0q1e/7-4-lead-in.mp4?rlkey=iq4kmqtywysqriva0b0vf3nhp&st=0b40h93b&raw=1" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-content">
+                    <h3>Pregame Lead-in Show</h3>
+                    <p>(July 2026)</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <video class="video-preview" controls>
+                    <source src="https://www.dropbox.com/scl/fi/pdrazki4j18aex93ye269/MVI_0426.MP4?rlkey=logndxpqd9efokc5s3q6k49mc&st=3qqbtq16&raw=1" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-content">
+                    <h3>La Crosse Loggers Postgame Player Interview with Mana Lau Kong</h3>
+                    <p>(July 2026)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume">
+        <h2 class="section-title">Resume</h2>
+        <a href="Fall_2026_Resume.pdf" class="btn" target="_blank">View Resume (PDF)</a>
+    </section>
+
+    <!-- Contact/Footer -->
+    <footer id="contact">
+        <h2>Let's Connect</h2>
+        <p>Reach out via email or connect with me on social media.</p>
+        <div class="social-icons" style="margin-top: 1rem;">
+            <a href="https://x.com/eliavbr5" target="_blank" style="font-size: 2rem; margin: 0 10px;">𝕏</a>
+            <a href="https://www.linkedin.com/in/eliav-brooks-rubin-8bab38326/" target="_blank" style="font-size: 2rem; margin: 0 10px;">in</a>
+            <a href="mailto:eliavdaniel5@gmail.com" style="font-size: 2rem; margin: 0 10px;">✉</a>
+        </div>
+        <p style="margin-top: 3rem; font-size: 0.8rem; color: #555;">&copy; 2026 Eliav Brooks-Rubin. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
